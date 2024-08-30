@@ -7,31 +7,44 @@ public class Fibonacci {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Digite um numero.");
+        System.out.println("Digite o numero.");
         entrada = scanner.nextInt();
 
-        calculaFibonacci(entrada);
+        int x = calculaFibonacci(entrada);
         
+        if(entrada == x)
+        {
+            System.out.println("Esse numero pertence a sequencia de Fibonacci.");
+
+        }
+        else{
+            System.out.println("Esse numero nao pertence a sequencia de Fibonacci.");
+
+        }
+
         scanner.close();
 
         
     }
 
-    private static void calculaFibonacci(int entrada)
+    private static int calculaFibonacci(int entrada)
     {
         int primeiro = 0;
         int segundo = 1;
         int resultado = 0;
 
-        for (int i = 0; i < entrada; i++)
+        for (int i = 0; i <= entrada; i++)
         {
             resultado = primeiro + segundo;
             primeiro = segundo;
             segundo = resultado;
-
-            System.out.println(resultado);
+            if (resultado == entrada)
+            {
+                break;
+            }
 
         }
+        return resultado;
     }
     
 }
