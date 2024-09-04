@@ -1,5 +1,13 @@
-package com.tais;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
 
+package com.desafio.faturamento;
+
+/**
+ *
+ * @author Tais
+ */
 import java.io.File;
 import java.io.IOException;
 
@@ -25,12 +33,12 @@ public class Faturamento {
     System.out.println("----------------------------");
     
     try {
-        Dados[] dados = objectMapper.readValue(new File(".\\faturamento\\src\\dados.json"), Dados[].class);
+        Dados[] dados = objectMapper.readValue(new File(".\\src\\dados.json"), Dados[].class);
         int i = 0;
         
         for(Dados iterator : dados){
             valores[i] = iterator.getValor();
-            System.out.printf("Dia: %d - Valor: %.2f\n",  i + 1,  valores[i]);
+            System.out.println("Dia " + i + ": " + valores[i]);
             if(valores[i] != 0.0)
             {
                 soma += valores[i];
